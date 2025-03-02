@@ -2,8 +2,52 @@
 <html>
 <head>
     <title>Assignment 24</title>
+    <style>
+        body{
+            background-color: rgb(249, 215, 221);
+            margin:0;
+            padding:0;
+        }
+        .container{
+            width: 500px;
+            margin:0 auto;
+            border:1px solid black;
+            border-radius:5px;
+            padding: 10px;
+            box-shadow:0 0 10px rgb(45, 43, 43);
+            margin-top:40px;
+            background-color:white;
+        }
+        .heading{
+            text-align:center;
+            color:palevioletred;
+        }
+        .dice{
+            height: 300px;
+            display:block;
+            margin:0 auto;
+        }
+        @media screen and (max-width:500px){
+            .container{
+                width:90%;
+            }
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <img src="dice.png" class="dice" id="dice-img">
+        <h1 class="heading">Party shoes</h1>
+    </div>
+    <script>
+        function rollDice(){
+        const min=1;
+        const max=6;
+
+        const random=Math.floor(Math.random() * (max-min+1))+min;
+        
+        const diceImg=document.getElementById("dice-img");
+        }
+    </script>
 </body>
 </html>
