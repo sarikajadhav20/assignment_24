@@ -42,6 +42,15 @@
             height:50px;
             cursor:pointer;
         }
+        .quantity-container{
+            display: flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .quantity-text{
+            font-size:45px;
+            margin: 0 50px;
+        }
         @media screen and (max-width:500px){
             .container{
                 width:90%;
@@ -56,19 +65,29 @@
         <p>Party shoes have a touch of fanciness and elegance that will instantly steal everyone's attention. Party wear shoes for men and women offered by Mochi Shoes are generally made of high-quality leather; however, other materials such as velvet also look pretty great.</p>
         <h2>Price:₹ 900/-</h2>
         <div class="quantity-container">
-            <img src="minus.png" class="btn-quantity" id="minus">
-            <img src="add.png" class="btn-quantity" id="add">
+            <img src="minus.png" class="btn-quantity" id="minus" onclick="decrese()">
+            <span class="quantity-text" id="quantity-text">1</span>
+            <img src="add.png" class="btn-quantity" id="add" onclick="increse()">
         </div>
         <button class="btn">Add to Cart</button>
     </div>
     <script>
-        function rollDice(){
-        const min=1;
-        const max=6;
-
-        const random=Math.floor(Math.random() * (max-min+1))+min;
-        
-        const diceImg=document.getElementById("dice-img");
+        const quantityText=document.getElementById('quantity-text');
+        function increse(){
+           let quantity=parseInt(quantityText.innerText)
+           if(quantity<10){
+           quantityText.innerText=++quantity;
+           }else{
+              alert("You can't add more than 10 items at a time");
+           }
+        }
+        function decrese(){
+            let quantity=parseInt(quantityText.innerText)
+            if(quantity>1){
+            quantityText.innerText=--quantity;
+            }else{
+              alert("You can't decrese the quantity less than 1");
+            }
         }
     </script>
 </body>
